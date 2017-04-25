@@ -3,6 +3,8 @@ import moduleForAcceptance from 'nightlife-client/tests/helpers/module-for-accep
 
 moduleForAcceptance('Acceptance | list bars');
 
+// Acceptance tests interact with the app like an actual person, but are automated
+
 test('should show bars for user\'s location as the home page', function(assert) {
 });
 
