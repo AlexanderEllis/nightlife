@@ -1,5 +1,8 @@
 <article class="listing">
-  <img src="{{bar.image}}" alt="">
+  <a {{action 'toggleImageSize'}} class="image {{if isWide "wide"}}"> 
+    <img src="{{bar.image}}" alt="">
+    <small>View Larger</small>
+  </a>
   <h3>{{bar.title}}</h3>
   <div class="detail location">
     <span>Location:</span> {{bar.location}}
