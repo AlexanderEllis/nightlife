@@ -6,9 +6,18 @@ moduleForAcceptance('Acceptance | list bars');
 // Acceptance tests interact with the app like an actual person, but are automated
 
 test('should show bars for user\'s location as the home page', function(assert) {
+  visit('/');
+  andThen(function() {
+    assert.equal(currentURL(), '/bars', 'should redirect automatically');
+  });
 });
 
 test('should link to information about the app', function(assert) {
+  visit('/');
+  click('a:contains("About")');
+  andThen(function() {
+    assert.equal(currentURL(), '/about', 'should navigate to about');
+  });
 });
 
 test('should list bars', function(assert) {
