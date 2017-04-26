@@ -21,6 +21,10 @@ test('should link to information about the app', function(assert) {
 });
 
 test('should list bars', function(assert) {
+  visit('/');
+  andThen(function() {
+    assert.equal(find('.listing').length, 3, 'should see 3 bars');
+  });
 });
 
 test('should filter the list of bars by name', function(assert) {
