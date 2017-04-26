@@ -11,7 +11,7 @@ export default function() {
           location: 'Brighton',
           going: 0,
           description: 'This is a great bar to catch a game at.',
-          image: 'sports-bar.jpg'
+          image: 'http://www.hermarys.com/wp-content/uploads/sports-bar-600x360.png'
         }
       }, {
         type: 'bars',
@@ -21,7 +21,7 @@ export default function() {
           location: 'Allston',
           going: 0,
           description: 'This is a great bar to have a cheap beer.',
-          image: 'dive-bar.jpg'
+          image: 'https://divebardiscourse.files.wordpress.com/2015/09/dive-counter.jpg'
         }
       }, {
         type: 'bars',
@@ -31,7 +31,7 @@ export default function() {
           location: 'Brookline',
           going: 0,
           description: 'This is a great bar to have wine at.',
-          image: 'wine-bar.jpg'
+          image: 'https://vinepair.com/wp-content/uploads/2015/10/Krog-Bar.jpg'
         }
       }]
     };
