@@ -4,9 +4,10 @@ import Ember from 'ember';
 
 let bar = Ember.Object.create({
     id: 'test-bar',
-    title: 'test-title',
+    name: 'test-name',
     location: 'test-city',
     going: 0,
+    rating: 1,
     description: 'test-description',
     image: 'fake.png'
 });
@@ -19,7 +20,7 @@ test('should display rental details', function(assert) {
   this.set('barObj', bar);
   this.render(hbs`{{bar-listing bar=barObj}}`);
 
-  assert.equal(this.$('.listing h3').text(), 'test-title', 'Title: test-title');
+  assert.equal(this.$('.listing h3').text(), 'test-name', 'Name: test-name');
   assert.equal(this.$('.listing .location').text().trim(), 'Location: test-city');
 });
 

@@ -28,6 +28,13 @@ test('should list bars', function(assert) {
 });
 
 test('should filter the list of bars by name', function(assert) {
+  visit('/');
+  fillIn('.list-filter input', 'Dive');
+  keyEvent('.list-filter input', 'keyup', 69);
+  andThen(function() {
+    assert.equal(find('.listing').length, 1, 'Should only show one listing');
+    assert.equal(find('.listing h3:contains("Dive")').length, 1, 'Should only show the result we searched for');
+  });
 });
 
 test('should search bars by location', function(assert) {

@@ -1,40 +1,50 @@
 export default function() {
   this.namespace = '/api';
 
-  this.get('/rentals', function() {
-    return {
-      data: [{
-        type: 'bars',
-        id: 'sports-bar',
-        attributes: {
-          title: 'Sports Bar',
-          location: 'Brighton',
-          going: 0,
-          description: 'This is a great bar to catch a game at.',
-          image: 'http://www.hermarys.com/wp-content/uploads/sports-bar-600x360.png'
-        }
-      }, {
-        type: 'bars',
-        id: 'dive-bar',
-        attributes: {
-          title: 'Dive Bar',
-          location: 'Allston',
-          going: 0,
-          description: 'This is a great bar to have a cheap beer.',
-          image: 'https://divebardiscourse.files.wordpress.com/2015/09/dive-counter.jpg'
-        }
-      }, {
-        type: 'bars',
-        id: 'wine-bar',
-        attributes: {
-          title: 'Wine Bar',
-          location: 'Brookline',
-          going: 0,
-          description: 'This is a great bar to have wine at.',
-          image: 'https://vinepair.com/wp-content/uploads/2015/10/Krog-Bar.jpg'
-        }
-      }]
-    };
+  let bars = [{
+    type: 'bars',
+    id: 'sports-bar',
+    attributes: {
+      name: 'Sports Bar',
+      location: 'Brighton',
+      going: 0,
+      rating: 4,
+      description: 'This is a great bar to catch a game at.',
+      image: 'http://www.hermarys.com/wp-content/uploads/sports-bar-600x360.png'
+    }
+  }, {
+    type: 'bars',
+    id: 'dive-bar',
+    attributes: {
+      name: 'Dive Bar',
+      location: 'Allston',
+      going: 0,
+      rating: 3,
+      description: 'This is a great bar to have a cheap beer.',
+      image: 'https://divebardiscourse.files.wordpress.com/2015/09/dive-counter.jpg'
+    }
+  }, {
+    type: 'bars',
+    id: 'wine-bar',
+    attributes: {
+      name: 'Wine Bar',
+      location: 'Brookline',
+      going: 0,
+      rating: 5,
+      description: 'This is a great bar to have wine at.',
+      image: 'https://vinepair.com/wp-content/uploads/2015/10/Krog-Bar.jpg'
+    }
+  }]
+
+  this.get('/bars', function(db, request) {
+    if (request.queryParams.name !== undefined) {
+      let filteredBars = bars.filter(function(i) {
+        return i.attributes.name.toLowerCase().indexOf(request.queryParams.name.toLowerCase()) !== -1;
+      });
+      return { data: filteredBars };
+    } else {
+      return { data: bars };
+    }
   });
 }
 
