@@ -6,7 +6,7 @@ export default function() {
     id: 'sports-bar',
     attributes: {
       name: 'Sports Bar',
-      location: 'Brighton',
+      location: 'Brighton, MA',
       going: 0,
       rating: 4,
       description: 'This is a great bar to catch a game at.',
@@ -17,7 +17,7 @@ export default function() {
     id: 'dive-bar',
     attributes: {
       name: 'Dive Bar',
-      location: 'Allston',
+      location: 'Allston, MA',
       going: 0,
       rating: 3,
       description: 'This is a great bar to have a cheap beer.',
@@ -28,7 +28,7 @@ export default function() {
     id: 'wine-bar',
     attributes: {
       name: 'Wine Bar',
-      location: 'Brookline',
+      location: 'Brookline, MA',
       going: 0,
       rating: 5,
       description: 'This is a great bar to have wine at.',
