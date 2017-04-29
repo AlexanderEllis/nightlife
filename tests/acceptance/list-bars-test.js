@@ -54,7 +54,7 @@ test('should search bars by location', function(assert) {
 });
 
 test('should show details for a selected bar', function(assert) {
-  visit('/rentals');
+  visit('/bars');
   click('a:contains("Sports Bar")');
   andThen(function() {
     assert.equal(currentURL(), '/bars/sports-bar', 'should navigate to show route');
