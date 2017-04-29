@@ -1,7 +1,20 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'nightlife-client/tests/helpers/module-for-acceptance';
+import Ember from 'ember';
 
-moduleForAcceptance('Acceptance | list bars');
+let StubMapsService = Ember.Service.extend({
+  getMapElement() {
+    return document.createElement('div');
+  }
+});
+
+moduleForAcceptance('Acceptance | list bars', {
+  beforeEach() {
+    this.application.register('service:stubMaps', StubMapsService);
+    this.application.inject('component:location-map', 'maps', 'service:stubMaps');
+  }
+});
+
 
 // Acceptance tests interact with the app like an actual person, but are automated
 
