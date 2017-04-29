@@ -54,6 +54,12 @@ test('should search bars by location', function(assert) {
 });
 
 test('should show details for a selected bar', function(assert) {
+  visit('/rentals');
+  click('a:contains("Sports Bar")');
+  andThen(function() {
+    assert.equal(currentURL(), '/bars/sports-bar', 'should navigate to show route');
+    assert.equal(find('.show-listing h2').text(), "Sports Bar", 'should list rental title');
+  });
 });
 
 test('As an authenticated user, I can add myself to a bar to indicate I am going there tonight.', function(assert) {

@@ -6,10 +6,4 @@
   {{/link-to}}
 </div>
 
-{{#bar-name-filter filter=(action 'filterByName') as |bars|}}
-  <ul class="results">
-    {{#each bars as |barUnit|}}
-      <li>{{bar-listing bar=barUnit}}</li>
-    {{/each}}
-  </ul>
-{{/bar-name-filter}}
+{{outlet}}

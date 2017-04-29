@@ -8,7 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('about');
-  this.route('bars');
+  this.route('bars', function() {
+    this.route('show', { path: '/:bar_id' });
+  });
 });
 
 export default Router;

@@ -46,6 +46,10 @@ export default function() {
       return { data: bars };
     }
   });
+
+  this.get('/bars/:id', function (db, request) {
+    return { data: bars.find((bar) => request.params.id == bar.id) };
+  });
 }
 
   // These comments are here to help you get started. Feel free to delete them.

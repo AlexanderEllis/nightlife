@@ -3,7 +3,7 @@
     <img src="{{bar.image}}" alt="">
     <small>View Larger</small>
   </a>
-  <h3>{{bar.name}}</h3>
+  <h3>{{#link-to "bars.show" bar}}{{bar.name}}{{/link-to}}</h3>
   <div class="detail location">
     <span>Location:</span> {{bar.location}}
   </div>
